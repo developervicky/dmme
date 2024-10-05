@@ -73,7 +73,7 @@ const AuthForm = () => {
             toast.error("Invalid Credentials");
           }
           if (callback?.ok && !callback!.error) {
-            toast.success("Logged In!");
+            toast.success("Logged In! Wait for few seconds 🙏");
             router.push("/users");
           }
         })
@@ -93,8 +93,8 @@ const AuthForm = () => {
           toast.error("Invalid Credentials");
         }
         if (callback?.ok && !callback!.error) {
-          toast.success("Logged In!");
           router.push("/users");
+          toast.success("Logged In! Wait for few seconds 🙏");
         }
       })
       .finally(() => setLoading(false));
@@ -139,6 +139,12 @@ const AuthForm = () => {
             {variant === "LOGIN" ? "Sign in" : "Register"}
           </Button>
         </form>
+
+        <div className="mt-6 flex flex-col rounded-md border p-2 px-4 text-sm text-gray-500">
+          <span className="font-bold">Test User</span>
+          <span>Email: test4@gmail.com</span>
+          <span>Password: 123456789</span>
+        </div>
 
         <div className="mt-6">
           <div className="relative">
